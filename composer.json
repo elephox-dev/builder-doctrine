@@ -1,0 +1,23 @@
+{
+    "name": "elephox/builder-doctrine",
+    "description": "Elephox Web Application Builder extension for Doctrine ORM",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Ricardo Boss",
+            "email": "contact@ricardoboss.de"
+        }
+    ],
+    "require": {
+        "doctrine/orm": "^2.11",
+        "elephox/web": "^0.4"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Elephox\\Builder\\Doctrine\\": "src/"
+        }
+    }
+}
