@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c302148c521f593b68c8355d6419810d",
+    "content-hash": "6250c27259c6cf23a3332910c033660e",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -1554,7 +1554,7 @@
         },
         {
             "name": "elephox/web",
-            "version": "v0.4.3",
+            "version": "dev-develop",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elephox-dev/web.git",
@@ -1588,6 +1588,7 @@
             "suggest": {
                 "psr/log": "If you want to use logging."
             },
+            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -3920,6 +3921,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "elephox/web": 20,
         "friendsofphp/php-cs-fixer": 20
     },
     "prefer-stable": true,
