@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="PhpCSFixer">
+    <phpcsfixer_settings>
+      <PhpCSFixerConfiguration tool_path="$PROJECT_DIR$/vendor/bin/php-cs-fixer" />
+    </phpcsfixer_settings>
+  </component>
   <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
@@ -20,7 +25,6 @@
       <path value="$PROJECT_DIR$/vendor/elephox/files" />
       <path value="$PROJECT_DIR$/vendor/elephox/http" />
       <path value="$PROJECT_DIR$/vendor/elephox/collection" />
-      <path value="$PROJECT_DIR$/vendor/elephox/platform" />
       <path value="$PROJECT_DIR$/vendor/elephox/autoloading" />
       <path value="$PROJECT_DIR$/vendor/elephox/mimey" />
       <path value="$PROJECT_DIR$/vendor/elephox/configuration" />
@@ -58,6 +62,11 @@
       <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
       <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/elephox/cache" />
+      <path value="$PROJECT_DIR$/vendor/symfony/cache" />
+      <path value="$PROJECT_DIR$/vendor/symfony/cache-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-exporter" />
+      <path value="$PROJECT_DIR$/vendor/elephox/apcu-cache" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1">

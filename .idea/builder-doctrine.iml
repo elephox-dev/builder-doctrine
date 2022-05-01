@@ -21,7 +21,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/elephox/files" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/elephox/http" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/elephox/collection" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/elephox/platform" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/elephox/autoloading" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/elephox/mimey" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/elephox/configuration" />
@@ -59,6 +58,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/deprecation-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/options-resolver" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/elephox/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/cache-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/var-exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/elephox/apcu-cache" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
