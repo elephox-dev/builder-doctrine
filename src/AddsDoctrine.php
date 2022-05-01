@@ -56,7 +56,7 @@ trait AddsDoctrine
 			return;
 		}
 
-		if (!class_exists(ElephoxCache::class)) {
+		if (!interface_exists(ElephoxCache::class)) {
 			throw new RuntimeException("You haven't added a cache implementation with the " . CacheItemPoolInterface::class . " service. Please install elephox/cache or symfony/cache and register an implementation in your container");
 		}
 
