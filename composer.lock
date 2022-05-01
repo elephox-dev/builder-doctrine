@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b30502f71db51cecf3540ebb552c9939",
+    "content-hash": "99f78512d6ba4259e47454b665be5efd",
     "packages": [
         {
             "name": "doctrine/cache",
@@ -1043,12 +1043,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/elephox-dev/configuration.git",
-                "reference": "f01745ac9a68dd0bc677b3166a3e6f2d226054af"
+                "reference": "a3e48abd4c1fe458a6ca85ddaf75c4c64ed310a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elephox-dev/configuration/zipball/f01745ac9a68dd0bc677b3166a3e6f2d226054af",
-                "reference": "f01745ac9a68dd0bc677b3166a3e6f2d226054af",
+                "url": "https://api.github.com/repos/elephox-dev/configuration/zipball/a3e48abd4c1fe458a6ca85ddaf75c4c64ed310a0",
+                "reference": "a3e48abd4c1fe458a6ca85ddaf75c4c64ed310a0",
                 "shasum": ""
             },
             "require": {
@@ -1089,7 +1089,7 @@
                 "issues": "https://github.com/elephox-dev/framework/issues",
                 "source": "https://github.com/elephox-dev/framework"
             },
-            "time": "2022-04-29T13:58:22+00:00"
+            "time": "2022-05-01T20:15:32+00:00"
         },
         {
             "name": "elephox/console",
@@ -1515,16 +1515,16 @@
         },
         {
             "name": "elephox/web",
-            "version": "dev-develop",
+            "version": "v0.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elephox-dev/web.git",
-                "reference": "f5d9c0a2eaae04f08dc934dc3c47cf2053d7b806"
+                "reference": "9827d1efc3162edd13656d6f0b2474a260bcf042"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elephox-dev/web/zipball/f5d9c0a2eaae04f08dc934dc3c47cf2053d7b806",
-                "reference": "f5d9c0a2eaae04f08dc934dc3c47cf2053d7b806",
+                "url": "https://api.github.com/repos/elephox-dev/web/zipball/9827d1efc3162edd13656d6f0b2474a260bcf042",
+                "reference": "9827d1efc3162edd13656d6f0b2474a260bcf042",
                 "shasum": ""
             },
             "require": {
@@ -1535,6 +1535,7 @@
                 "elephox/di": "dev-develop",
                 "elephox/files": "dev-develop",
                 "elephox/http": "dev-develop",
+                "elephox/logging": "dev-develop",
                 "elephox/oor": "dev-develop",
                 "elephox/support": "dev-develop",
                 "ext-mbstring": "*",
@@ -1542,7 +1543,12 @@
                 "php": "^8.1 <8.3",
                 "symfony/process": "^6.0"
             },
-            "default-branch": true,
+            "provide": {
+                "psr/log-implementation": "3.0"
+            },
+            "suggest": {
+                "psr/log": "If you want to use logging."
+            },
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -1561,10 +1567,10 @@
             ],
             "description": "Elephox Web library.",
             "support": {
-                "issues": "https://github.com/elephox-dev/framework/issues",
-                "source": "https://github.com/elephox-dev/framework"
+                "issues": "https://github.com/elephox-dev/web/issues",
+                "source": "https://github.com/elephox-dev/web/tree/v0.4.3"
             },
-            "time": "2022-04-30T16:46:10+00:00"
+            "time": "2022-04-27T16:04:59+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -4219,7 +4225,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "elephox/web": 20,
         "friendsofphp/php-cs-fixer": 20,
         "elephox/cache": 20,
         "elephox/apcu-cache": 20,
