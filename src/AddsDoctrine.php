@@ -10,7 +10,10 @@ use Doctrine\ORM\Tools\Console\EntityManagerProvider;
 use Elephox\Cache\APCu\APCuCache as ElephoxApcuCache;
 use Elephox\Cache\APCu\APCuCacheConfiguration as ElephoxApcuCacheConfiguration;
 use Elephox\Cache\Contract\Cache as ElephoxCache;
-use Symfony\Component\Cache\Adapter\ArrayAdapter as SymfonyArrayCache;
+use Elephox\Cache\Contract\CacheConfiguration as ElephoxCacheConfiguration;
+use Elephox\Cache\InMemoryCache as ElephoxInMemoryCacheAlias;
+use Elephox\Cache\InMemoryCacheConfiguration as ElephoxInMemoryCacheConfiguration;
+use Symfony\Component\Cache\Adapter\ArrayAdapter as SymfonyInMemoryCache;
 use Elephox\DI\Contract\ServiceCollection;
 use Psr\Cache\CacheItemPoolInterface;
 use RuntimeException;
@@ -47,7 +50,7 @@ trait AddsDoctrine
 			return;
 		}
 
-		if (class_exists(SymfonyArrayCache::class)) {
+		if (class_exists(SymfonyInMemoryCache::class)) {
 			// Doctrine has its own method to create a cache instance. We won't interfere by registering a default cache driver.
 
 			return;
@@ -59,16 +62,22 @@ trait AddsDoctrine
 
 		if (class_exists(ElephoxApcuCache::class)) {
 			if (!$this->getServices()->hasService(ElephoxApcuCacheConfiguration::class)) {
-				$this->getServices()->addSingleton(ElephoxApcuCacheConfiguration::class, implementation: new ElephoxApcuCacheConfiguration());
+				$this->getServices()->addSingleton(ElephoxApcuCacheConfiguration::class, ElephoxApcuCacheConfiguration::class);
+				$this->getServices()->setAlias(ElephoxCacheConfiguration::class, ElephoxApcuCacheConfiguration::class);
 			}
 
 			$this->getServices()->addSingleton(CacheItemPoolInterface::class, ElephoxApcuCache::class);
+
+			return;
 		}
 
-		// TODO: implement check for memcached and redis elephox caches
+		// TODO: implement check for memcached and redis elephox cache implementations
 
-		if (!$this->getServices()->hasService(CacheItemPoolInterface::class)) {
-			throw new RuntimeException("Could not register a default cache driver. Please install symfony/cache or add an Elephox cache implementation (e.g. elephox/apcu-cache)");
+		if (!$this->getServices()->hasService(ElephoxInMemoryCacheConfiguration::class)) {
+			$this->getServices()->addSingleton(ElephoxInMemoryCacheConfiguration::class, ElephoxInMemoryCacheConfiguration::class);
+			$this->getServices()->setAlias(ElephoxCacheConfiguration::class, ElephoxInMemoryCacheConfiguration::class);
 		}
+
+		$this->getServices()->addSingleton(CacheItemPoolInterface::class, ElephoxInMemoryCacheAlias::class);
 	}
 }
