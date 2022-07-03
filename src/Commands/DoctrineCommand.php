@@ -22,8 +22,8 @@ class DoctrineCommand implements CommandHandler
 	public function configure(CommandTemplateBuilder $builder): void
 	{
 		$builder
-			->name('doc')
-			->required('command', 'The command to relay to the doctrine executable')
+			->setName('doc')
+			->addArgument('command', description: 'The command to relay to the doctrine executable')
 		;
 	}
 
@@ -32,12 +32,12 @@ class DoctrineCommand implements CommandHandler
 	 */
 	public function handle(CommandInvocation $command): int|null
 	{
-		$doctrineCommand = $command->getArgument('command')->value;
+		$doctrineCommand = $command->arguments->command->value;
 
 		return ConsoleRunner::createApplication($this->entityManagerProvider)->run(
 			new ArrayInput([
 				'command' => $doctrineCommand,
-				...$command->raw->arguments->toList(),
+				...$command->raw->parameters->toList(),
 			]),
 			new ConsoleOutput()
 		);
