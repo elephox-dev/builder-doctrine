@@ -11,7 +11,7 @@
     ],
     "require": {
         "php": "^8.1 <8.3",
-        "doctrine/orm": "^2.12",
+        "doctrine/orm": "3.0.x-dev",
         "elephox/web": "dev-develop",
         "psr/cache-implementation": "^3.0"
     },
@@ -19,7 +19,7 @@
         "friendsofphp/php-cs-fixer": "dev-master",
         "elephox/cache": "dev-develop",
         "elephox/apcu-cache": "dev-develop",
-        "symfony/cache": "6.1.x-dev"
+        "symfony/cache": "6.2.x-dev"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,

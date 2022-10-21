@@ -3,9 +3,10 @@ declare(strict_types=1);
 
 namespace Elephox\Builder\Doctrine;
 
+use Doctrine\DBAL\Exception;
 use Doctrine\ORM\Configuration as DoctrineConfiguration;
 use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\Exception\ORMException;
+use Doctrine\ORM\Exception\ManagerException;
 use Doctrine\ORM\ORMSetup as DoctrineSetup;
 use Doctrine\ORM\Tools\Console\EntityManagerProvider;
 use Doctrine\ORM\Tools\Console\EntityManagerProvider\UnknownManagerException;
@@ -36,7 +37,8 @@ class DefaultEntityManagerProvider implements EntityManagerProvider
 	}
 
 	/**
-	 * @throws ORMException
+	 * @throws ManagerException
+	 * @throws Exception
 	 */
 	public function getDefaultManager(bool $forceRecreate = false): EntityManager
 	{
@@ -58,7 +60,7 @@ class DefaultEntityManagerProvider implements EntityManagerProvider
 				throw new ConfigurationException('Unsupported doctrine metadata driver: ' . $setupDriver . '. Must be one of: ' . implode(', ', array_keys(self::SUPPORTED_DRIVERS)));
 			}
 
-			/** @var DoctrineConfiguration */
+			/** @var DoctrineConfiguration $doctrineConfiguration */
 			$doctrineConfiguration = $this->services->resolver()->callStatic(
 				DoctrineSetup::class,
 				$setupMethod,
@@ -82,7 +84,8 @@ class DefaultEntityManagerProvider implements EntityManagerProvider
 	}
 
 	/**
-	 * @throws ORMException
+	 * @throws ManagerException
+	 * @throws Exception
 	 */
 	public function getManager(string $name, bool $forceRecreate = false): EntityManager
 	{
