@@ -69,9 +69,8 @@ class DefaultEntityManagerProvider implements EntityManagerProvider
 		if ($this->services->has(DoctrineConnection::class)) {
 			$connection = $this->services->get(DoctrineConnection::class);
 		} else {
-			/** @var array<string, mixed>|null $doctrineConnection */
 			$connectionParams = $this->configuration['doctrine:connection'];
-			if (!is_array($doctrineConnection)) {
+			if (!is_array($connectionParams)) {
 				throw new ConfigurationException('No doctrine connection specified at "doctrine:connection"');
 			}
 
