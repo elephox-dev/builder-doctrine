@@ -64,6 +64,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/var-exporter" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/elephox/apcu-cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/elephox/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

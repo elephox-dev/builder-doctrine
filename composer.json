@@ -10,14 +10,13 @@
         }
     ],
     "require": {
-        "php": "^8.1 <8.3",
+        "php": "^8.2 <8.4",
         "doctrine/orm": "3.0.x-dev",
-        "elephox/web": "dev-develop",
+        "elephox/framework": "dev-develop",
         "psr/cache-implementation": "^3.0"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "dev-master",
-        "elephox/cache": "dev-develop",
         "elephox/apcu-cache": "dev-develop",
         "symfony/cache": "6.2.x-dev"
     },

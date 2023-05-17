@@ -12,12 +12,11 @@ use Exception;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\ConsoleOutput;
 
-class DoctrineCommand implements CommandHandler
+readonly class DoctrineCommand implements CommandHandler
 {
 	public function __construct(
-		private readonly EntityManagerProvider $entityManagerProvider,
-	)
-	{
+		private EntityManagerProvider $entityManagerProvider,
+	) {
 	}
 
 	public function configure(CommandTemplateBuilder $builder): void
@@ -40,7 +39,7 @@ class DoctrineCommand implements CommandHandler
 				'command' => $doctrineCommand,
 				...$command->raw->parameters->toList(),
 			]),
-			new ConsoleOutput()
+			new ConsoleOutput(),
 		);
 	}
 }
