@@ -32,10 +32,10 @@ readonly class DoctrineCommand implements CommandHandler
 	 */
 	public function handle(CommandInvocation $command): int|null
 	{
-		$doctrineCommand = $command->arguments->get('command')->string();
+		$doctrineCommand = substr($command->raw->commandLine, strpos($command->raw->commandLine, $command->arguments->get('command')->string()));
 
 		return ConsoleRunner::createApplication($this->entityManagerProvider)->run(
-			new StringInput($command->raw->commandLine),
+			new StringInput($doctrineCommand),
 			new ConsoleOutput(),
 		);
 	}
