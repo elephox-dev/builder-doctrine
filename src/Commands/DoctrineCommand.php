@@ -35,7 +35,7 @@ readonly class DoctrineCommand implements CommandHandler
 		$doctrineCommand = $command->arguments->get('command')->string();
 
 		return ConsoleRunner::createApplication($this->entityManagerProvider)->run(
-			new StringInput($command->commandLine),
+			new StringInput($command->raw->commandLine),
 			new ConsoleOutput(),
 		);
 	}
